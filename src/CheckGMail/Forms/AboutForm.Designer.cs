@@ -73,7 +73,7 @@
             this.labelVersion.Name = "labelVersion";
             this.labelVersion.Size = new System.Drawing.Size(47, 11);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "v1.0.0";
+            this.labelVersion.Text = "v1.0.1";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // AboutForm

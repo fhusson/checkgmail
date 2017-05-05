@@ -1,16 +1,10 @@
 ﻿using Google.Apis.Auth.OAuth2;
-using Google.Apis.Auth.OAuth2.Flows;
 using Google.Apis.Auth.OAuth2.Responses;
 using Google.Apis.Gmail.v1;
 using Google.Apis.Services;
 using Google.Apis.Util.Store;
 using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace CheckGMail
 {
@@ -23,7 +17,7 @@ namespace CheckGMail
         Running
     }
 
-    class GoogleBusiness
+    class GoogleBusiness : IDisposable
     {
         private ClientSecrets clientSecrets = null;
 
@@ -103,7 +97,12 @@ namespace CheckGMail
         {
             _credential.RevokeTokenAsync(CancellationToken.None).Wait();
             _credential = null;
-            _gmail = null;
+
+            if (_gmail != null)
+            {
+                _gmail.Dispose();
+                _gmail = null;
+            }
         }
 
         public long? GMailCheckMessages()
@@ -135,6 +134,14 @@ namespace CheckGMail
         internal void Authorize()
         {
             InitCredential();
+        }
+
+        public void Dispose()
+        {
+            if (_gmail != null)
+            {
+                _gmail.Dispose();
+            }
         }
     }
 }

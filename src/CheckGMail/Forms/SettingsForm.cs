@@ -86,8 +86,10 @@ namespace CheckGMail
 
         private void SetLinkLabel()
         {
-            LinkLabel.Link link = new LinkLabel.Link();
-            link.LinkData = config.UrlMoreInformation;
+            LinkLabel.Link link = new LinkLabel.Link()
+            {
+                LinkData = config.UrlMoreInformation
+            };
             this.linkLabel1.Links.Clear();
             this.linkLabel1.Links.Add(link);
         }

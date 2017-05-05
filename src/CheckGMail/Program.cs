@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace CheckGMail
@@ -17,9 +14,10 @@ namespace CheckGMail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            SettingsForm form = new SettingsForm();
-            form.Visible = false;
-
+            SettingsForm form = new SettingsForm()
+            {
+                Visible = false
+            };
             Application.Run();
         }
     }

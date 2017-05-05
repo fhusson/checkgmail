@@ -108,6 +108,7 @@
     <Compile Include="Forms\AboutForm.Designer.cs">
       <DependentUpon>AboutForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="GoogleBusiness.cs" />
     <Compile Include="Configuration.cs" />
     <Compile Include="FilterEnum.cs" />
@@ -124,7 +125,7 @@
     <EmbeddedResource Include="Resources\About.png" />
     <EmbeddedResource Include="Resources\NotifMessages.ico" />
     <EmbeddedResource Include="Resources\NotifError.ico" />
-    <EmbeddedResource Include="..\..\PrivateRepository\Google\CheckGMail\client_secrets.json">
+    <EmbeddedResource Include="..\GoogleGmailAPIKey\client_secrets.json">
       <Link>Resources\client_secrets.json</Link>
     </EmbeddedResource>
     <None Include="Resources\source.txt" />

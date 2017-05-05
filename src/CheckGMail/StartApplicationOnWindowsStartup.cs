@@ -12,7 +12,6 @@ namespace Baleinoid.Windows.Tools
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true))
             {
                 key.SetValue(Application.ProductName, Application.ExecutablePath.ToString());
-                key.Close();
             }
         }
 
@@ -21,7 +20,6 @@ namespace Baleinoid.Windows.Tools
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true))
             {
                 key.DeleteValue(Application.ProductName, false);
-                key.Close();
             }
         }
 
@@ -32,7 +30,6 @@ namespace Baleinoid.Windows.Tools
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, false))
             {
                 result = (key.GetValue(Application.ProductName) != null);
-                key.Close();
             }
 
             return result;
