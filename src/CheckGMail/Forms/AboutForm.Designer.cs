@@ -69,11 +69,11 @@
             // 
             this.labelVersion.AutoSize = true;
             this.labelVersion.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.labelVersion.Location = new System.Drawing.Point(65, 37);
+            this.labelVersion.Location = new System.Drawing.Point(44, 33);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(47, 11);
+            this.labelVersion.Size = new System.Drawing.Size(82, 11);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "v1.0.1";
+            this.labelVersion.Text = "Version x.y";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // AboutForm

@@ -25,7 +25,7 @@ namespace CheckGMail
             get
             {
                 var v = Assembly.GetExecutingAssembly().GetName().Version;
-                return string.Format("Version {0}.{1}.{2}", v.Major, v.Minor, v.Revision);
+                return string.Format("Version {0}.{1}", v.Major, v.Minor);
             }
         }
 
