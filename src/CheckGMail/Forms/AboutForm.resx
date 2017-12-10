@@ -348,4 +348,14 @@
         Sck6iQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>CheckGMail from Whaly
+Homepage : http://www.baleinoid.com
+Source : http://github.com/whaly/checkgmail
+Licence : LGPL 3.0 - https://opensource.org/licenses/LGPL-3.0
+
+Icons from Double-J Design
+Homepage: http://www.doublejdesign.co.uk
+Licence : CC Attribution 4.0 - https://creativecommons.org/licenses/by/4.0/</value>
+  </data>
 </root>
