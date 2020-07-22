@@ -1,4 +1,6 @@
-﻿namespace CheckGMail
+﻿using System.Globalization;
+
+namespace CheckGMail
 {
     class Configuration
     {
@@ -58,11 +60,11 @@
         {
             get
             {
-                return string.Format(URL_MORE_INFORMATION, this.Language);
+                return string.Format(CultureInfo.CurrentCulture, URL_MORE_INFORMATION, this.Language);
             }
         }
 
-        private static string URL_INBOX = @"https://mail.google.com";
+        private const string URL_INBOX = @"https://mail.google.com";
         public string InboxUrl => URL_INBOX;
     }
 }

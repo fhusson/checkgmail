@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -229,9 +230,11 @@ namespace CheckGMail
             {
                 long? messagesCount = GoogleBusiness.Instance.GMailCheckMessages();
                 this.notifyIcon.Icon = (messagesCount.GetValueOrDefault() > 0) ? MyResources.Instance.NotificationMessages : MyResources.Instance.NotificationNoMessage;
-                this.notifyIcon.Text = string.Format("{0} message(s)", messagesCount);
+                this.notifyIcon.Text = string.Format(CultureInfo.CurrentCulture, "{0} message(s)", messagesCount);
             }
+#pragma warning disable CA1031 // Ne pas intercepter les types d'exception générale
             catch (Exception ex)
+#pragma warning restore CA1031 // Ne pas intercepter les types d'exception générale
             {
                 this.notifyIcon.Icon = MyResources.Instance.NotificationError;
                 this.notifyIcon.Text = ex.Message;

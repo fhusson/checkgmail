@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -25,7 +26,7 @@ namespace CheckGMail
             get
             {
                 var v = Assembly.GetExecutingAssembly().GetName().Version;
-                return string.Format("Version {0}.{1}.{2}", v.Major, v.Minor, v.Revision);
+                return string.Format(CultureInfo.CurrentCulture, "Version {0}.{1}.{2}", v.Major, v.Minor, v.Revision);
             }
         }
 
