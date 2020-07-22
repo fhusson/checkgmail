@@ -4,6 +4,13 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
+    <ApplicationIcon></ApplicationIcon>
+    <StartupObject></StartupObject>
+    <Version>2.0.0</Version>
+    <Authors>fhusson</Authors>
+    <Company>1f433</Company>
+    <RepositoryUrl>https://github.com/fhusson/checkgmail/</RepositoryUrl>
+    <PackageIcon>About.png</PackageIcon>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,6 +18,10 @@
     <None Remove="Resources\NotifError.ico" />
     <None Remove="Resources\NotifInit.ico" />
     <None Remove="Resources\NotifMessages.ico" />
+    <None Include="Resources\About.png">
+      <Pack>True</Pack>
+      <PackagePath></PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -25,6 +36,10 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Apis.Gmail.v1" Version="1.48.0.2020" />
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="2.9.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
   <ItemGroup>

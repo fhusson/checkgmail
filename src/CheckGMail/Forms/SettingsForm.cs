@@ -229,10 +229,12 @@ namespace CheckGMail
             {
                 long? messagesCount = GoogleBusiness.Instance.GMailCheckMessages();
                 this.notifyIcon.Icon = (messagesCount.GetValueOrDefault() > 0) ? MyResources.Instance.NotificationMessages : MyResources.Instance.NotificationNoMessage;
+                this.notifyIcon.Text = string.Format("{0} message(s)", messagesCount);
             }
-            catch(Exception)
+            catch (Exception ex)
             {
                 this.notifyIcon.Icon = MyResources.Instance.NotificationError;
+                this.notifyIcon.Text = ex.Message;
             }
         }
    }
