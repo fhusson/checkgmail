@@ -37,18 +37,18 @@
 
         public void Load()
         {
-            this.Language = (string)Properties.Settings.Default["Language"];
-            this.CustomQ = (string)Properties.Settings.Default["CustomQ"];
-            this.FilterType = (FilterEnum)Properties.Settings.Default["FilterType"];
-            this.IntervalInMinutes = (int)Properties.Settings.Default["IntervalInMinutes"];
+            this.Language = (string)Properties.Settings.Default[nameof(Language)];
+            this.CustomQ = (string)Properties.Settings.Default[nameof(CustomQ)];
+            this.FilterType = (FilterEnum)Properties.Settings.Default[nameof(FilterType)];
+            this.IntervalInMinutes = (int)Properties.Settings.Default[nameof(IntervalInMinutes)];
         }
 
         public void Save()
         {
-            Properties.Settings.Default["Language"] = this.Language;
-            Properties.Settings.Default["CustomQ"] = this.CustomQ;
-            Properties.Settings.Default["FilterType"] = (int)this.FilterType;
-            Properties.Settings.Default["IntervalInMinutes"] = this.IntervalInMinutes;
+            Properties.Settings.Default[nameof(Language)] = this.Language;
+            Properties.Settings.Default[nameof(CustomQ)] = this.CustomQ;
+            Properties.Settings.Default[nameof(FilterType)] = (int)this.FilterType;
+            Properties.Settings.Default[nameof(IntervalInMinutes)] = this.IntervalInMinutes;
 
             Properties.Settings.Default.Save();
         }
@@ -62,13 +62,7 @@
             }
         }
 
-        private const string URL_INBOX = @"https://mail.google.com";
-        public string InboxUrl
-        {
-            get
-            {
-                return URL_INBOX;
-            }
-        }
+        private static string URL_INBOX = @"https://mail.google.com";
+        public string InboxUrl => URL_INBOX;
     }
 }
