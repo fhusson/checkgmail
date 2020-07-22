@@ -13,8 +13,8 @@ namespace CheckGMail
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
-            SettingsForm form = new SettingsForm()
+            
+            _ = new SettingsForm()
             {
                 Visible = false
             };

@@ -14,7 +14,7 @@ namespace CheckGMail
 {
     public partial class SettingsForm : Form
     {
-        private Configuration config = new Configuration();
+        private readonly Configuration config = new Configuration();
 
         public SettingsForm()
         {
