@@ -221,7 +221,12 @@ namespace CheckGMail
 
         private void ViewInbox()
         {
-            Process.Start(config.InboxUrl);
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = config.InboxUrl,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private void CheckMail()
