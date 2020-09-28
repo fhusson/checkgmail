@@ -11,8 +11,10 @@ namespace CheckGMail
     {
         private readonly Configuration config = new Configuration();
 
-        public SettingsForm()
+        public SettingsForm(bool visible = true)
         {
+            this.Visible = visible;
+
             config.Load();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(config.Language);
 
@@ -203,8 +205,10 @@ namespace CheckGMail
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm a = new AboutForm();
-            a.ShowDialog();
+            using (AboutForm a = new AboutForm())
+            {
+                a.ShowDialog();
+            }
         }
 
         private void revokeToolStripMenuItem_Click(object sender, EventArgs e)

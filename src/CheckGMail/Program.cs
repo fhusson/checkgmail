@@ -15,12 +15,11 @@ namespace CheckGMail
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            
-            _ = new SettingsForm()
+
+            using (var settings = new SettingsForm(false))
             {
-                Visible = false
-            };
-            Application.Run();
+                Application.Run();
+            }
         }
     }
 }

@@ -5,7 +5,7 @@ using System.IO;
 
 namespace CheckGMail
 {
-    public class MyResources : IDisposable
+    public class MyResources: IDisposable
     {
         private readonly Assembly _assembly = null;
 
@@ -57,7 +57,7 @@ namespace CheckGMail
         }
 
         #region IDisposable Support
-        private bool disposedValue = false; // Pour détecter les appels redondants
+        private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
         {
@@ -89,13 +89,10 @@ namespace CheckGMail
             }
         }
 
-        // Ce code est ajouté pour implémenter correctement le modèle supprimable.
         public void Dispose()
         {
-            // Ne modifiez pas ce code. Placez le code de nettoyage dans Dispose(bool disposing) ci-dessus.
-            Dispose(true);
-            // TODO: supprimer les marques de commentaire pour la ligne suivante si le finaliseur est remplacé ci-dessus.
-            // GC.SuppressFinalize(this);
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
         #endregion
     }
