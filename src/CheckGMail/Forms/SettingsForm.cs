@@ -1,18 +1,12 @@
-﻿using Baleinoid.Windows.Tools;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Diagnostics;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace CheckGMail
 {
+    [SupportedOSPlatform("windows")]
     public partial class SettingsForm : Form
     {
         private readonly Configuration config = new Configuration();

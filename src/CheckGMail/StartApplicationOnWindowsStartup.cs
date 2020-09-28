@@ -1,8 +1,10 @@
 ﻿using Microsoft.Win32;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
-namespace Baleinoid.Windows.Tools
+namespace CheckGMail
 {
+    [SupportedOSPlatform("windows")]
     static public class StartApplicationOnWindowsStartup
     {
         private const string PATH = @"SOFTWARE\Microsoft\Windows\CurrentVersion\Run";
