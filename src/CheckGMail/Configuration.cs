@@ -1,4 +1,7 @@
-﻿namespace CheckGMail
+﻿using System.Globalization;
+using System.Reflection;
+
+namespace CheckGMail
 {
     class Configuration
     {
@@ -37,18 +40,18 @@
 
         public void Load()
         {
-            this.Language = (string)Properties.Settings.Default["Language"];
-            this.CustomQ = (string)Properties.Settings.Default["CustomQ"];
-            this.FilterType = (FilterEnum)Properties.Settings.Default["FilterType"];
-            this.IntervalInMinutes = (int)Properties.Settings.Default["IntervalInMinutes"];
+            this.Language = (string)Properties.Settings.Default[nameof(Language)];
+            this.CustomQ = (string)Properties.Settings.Default[nameof(CustomQ)];
+            this.FilterType = (FilterEnum)Properties.Settings.Default[nameof(FilterType)];
+            this.IntervalInMinutes = (int)Properties.Settings.Default[nameof(IntervalInMinutes)];
         }
 
         public void Save()
         {
-            Properties.Settings.Default["Language"] = this.Language;
-            Properties.Settings.Default["CustomQ"] = this.CustomQ;
-            Properties.Settings.Default["FilterType"] = (int)this.FilterType;
-            Properties.Settings.Default["IntervalInMinutes"] = this.IntervalInMinutes;
+            Properties.Settings.Default[nameof(Language)] = this.Language;
+            Properties.Settings.Default[nameof(CustomQ)] = this.CustomQ;
+            Properties.Settings.Default[nameof(FilterType)] = (int)this.FilterType;
+            Properties.Settings.Default[nameof(IntervalInMinutes)] = this.IntervalInMinutes;
 
             Properties.Settings.Default.Save();
         }
@@ -58,16 +61,32 @@
         {
             get
             {
-                return string.Format(URL_MORE_INFORMATION, this.Language);
+                return string.Format(CultureInfo.CurrentCulture, URL_MORE_INFORMATION, this.Language);
             }
         }
 
         private const string URL_INBOX = @"https://mail.google.com";
-        public string InboxUrl
+        public static string InboxUrl => URL_INBOX;
+
+        public static string ProductName
         {
             get
             {
-                return URL_INBOX;
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+
+        public static string ProductVersion
+        {
+            get
+            {
+                var v = Assembly.GetExecutingAssembly().GetName().Version;
+                return string.Format(CultureInfo.CurrentCulture, "Version {0}.{1}.{2}", v.Major, v.Minor, v.Revision);
             }
         }
     }

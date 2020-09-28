@@ -39,9 +39,10 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(16, 294);
+            this.buttonOk.Location = new System.Drawing.Point(19, 339);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(394, 23);
+            this.buttonOk.Size = new System.Drawing.Size(460, 27);
             this.buttonOk.TabIndex = 0;
             this.buttonOk.Text = "&OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -50,9 +51,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(16, 34);
+            this.pictureBox1.Location = new System.Drawing.Point(19, 39);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(394, 128);
+            this.pictureBox1.Size = new System.Drawing.Size(460, 148);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
@@ -60,8 +62,9 @@
             // labelProduct
             // 
             this.labelProduct.AutoSize = true;
-            this.labelProduct.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelProduct.Location = new System.Drawing.Point(12, 9);
+            this.labelProduct.Font = new System.Drawing.Font("Lucida Console", 16F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.labelProduct.Location = new System.Drawing.Point(14, 10);
+            this.labelProduct.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelProduct.Name = "labelProduct";
             this.labelProduct.Size = new System.Drawing.Size(150, 22);
             this.labelProduct.TabIndex = 2;
@@ -70,33 +73,36 @@
             // labelVersion
             // 
             this.labelVersion.AutoSize = true;
-            this.labelVersion.Font = new System.Drawing.Font("Lucida Console", 8.25F);
-            this.labelVersion.Location = new System.Drawing.Point(328, 9);
+            this.labelVersion.Font = new System.Drawing.Font("Lucida Console", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelVersion.Location = new System.Drawing.Point(383, 10);
+            this.labelVersion.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelVersion.Name = "labelVersion";
-            this.labelVersion.Size = new System.Drawing.Size(82, 11);
+            this.labelVersion.Size = new System.Drawing.Size(96, 11);
             this.labelVersion.TabIndex = 3;
-            this.labelVersion.Text = "Version x.y";
+            this.labelVersion.Text = "Version x.y.z";
             this.labelVersion.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(16, 166);
+            this.richTextBox1.Location = new System.Drawing.Point(19, 192);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(394, 122);
+            this.richTextBox1.Size = new System.Drawing.Size(459, 140);
             this.richTextBox1.TabIndex = 5;
             this.richTextBox1.Text = resources.GetString("richTextBox1.Text");
             // 
             // AboutForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(424, 322);
+            this.ClientSize = new System.Drawing.Size(495, 372);
             this.Controls.Add(this.richTextBox1);
             this.Controls.Add(this.labelVersion);
             this.Controls.Add(this.labelProduct);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "AboutForm";

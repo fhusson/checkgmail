@@ -1,8 +1,7 @@
 # Google Gmail API Key
 
-You must download from https://console.developers.google.com
+From the [Google Developers Console](https://console.developers.google.com)
 
-In French you can find it under :
-"Projet / API et authentification / Identifiants / Identifiant client de l'application native"
-
-and put the content in the file "client_secrets.json" of this folder
+1. Select/Create your "Project"
+2. Go to the [Credentials](https://console.developers.google.com/apis/credentials)
+3. Create a "OAuth 2.0 Client IDs" credential and save it in this folder under the name client_secrets.json

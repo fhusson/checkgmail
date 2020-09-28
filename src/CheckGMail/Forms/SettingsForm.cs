@@ -1,23 +1,20 @@
-﻿using Baleinoid.Windows.Tools;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+﻿using System;
 using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Globalization;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace CheckGMail
 {
+    [SupportedOSPlatform("windows")]
     public partial class SettingsForm : Form
     {
-        private Configuration config = new Configuration();
+        private readonly Configuration config = new Configuration();
 
-        public SettingsForm()
+        public SettingsForm(bool visible = true)
         {
+            this.Visible = visible;
+
             config.Load();
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(config.Language);
 
@@ -208,7 +205,7 @@ namespace CheckGMail
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AboutForm a = new AboutForm();
+            using AboutForm a = new AboutForm();
             a.ShowDialog();
         }
 
@@ -218,9 +215,14 @@ namespace CheckGMail
             CleanExit();
         }
 
-        private void ViewInbox()
+        private static void ViewInbox()
         {
-            Process.Start(config.InboxUrl);
+            ProcessStartInfo psi = new ProcessStartInfo
+            {
+                FileName = Configuration.InboxUrl,
+                UseShellExecute = true
+            };
+            Process.Start(psi);
         }
 
         private void CheckMail()
@@ -229,10 +231,14 @@ namespace CheckGMail
             {
                 long? messagesCount = GoogleBusiness.Instance.GMailCheckMessages();
                 this.notifyIcon.Icon = (messagesCount.GetValueOrDefault() > 0) ? MyResources.Instance.NotificationMessages : MyResources.Instance.NotificationNoMessage;
+                this.notifyIcon.Text = string.Format(CultureInfo.CurrentCulture, "{0} message(s)", messagesCount);
             }
-            catch(Exception)
+#pragma warning disable CA1031 // Ne pas intercepter les types d'exception générale
+            catch (Exception ex)
+#pragma warning restore CA1031 // Ne pas intercepter les types d'exception générale
             {
                 this.notifyIcon.Icon = MyResources.Instance.NotificationError;
+                this.notifyIcon.Text = ex.Message;
             }
         }
    }

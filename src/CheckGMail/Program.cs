@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Runtime.Versioning;
 using System.Windows.Forms;
 
 namespace CheckGMail
 {
+    [SupportedOSPlatform("windows")]
     static class Program
     {
         /// <summary>
@@ -14,10 +16,7 @@ namespace CheckGMail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            SettingsForm form = new SettingsForm()
-            {
-                Visible = false
-            };
+            using var settings = new SettingsForm(false);
             Application.Run();
         }
     }

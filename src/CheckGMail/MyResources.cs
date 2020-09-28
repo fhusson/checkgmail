@@ -5,19 +5,16 @@ using System.IO;
 
 namespace CheckGMail
 {
-    public class MyResources : IDisposable
+    public class MyResources: IDisposable
     {
-        private Assembly _assembly = null;
-        private Icon _notifInit = null;
-        private Icon _notifMessages = null;
-        private Icon _notifError = null;
+        private readonly Assembly _assembly;
 
         private MyResources()
         {
             _assembly = Assembly.GetExecutingAssembly();
-            _notifInit = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifInit.ico"));
-            _notifMessages = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifMessages.ico"));
-            _notifError = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifError.ico"));
+            ApplicationIcon = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifInit.ico"));
+            NotificationMessages = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifMessages.ico"));
+            NotificationError = new Icon(_assembly.GetManifestResourceStream("CheckGMail.Resources.NotifError.ico"));
         }
 
         private static MyResources instance;
@@ -32,44 +29,27 @@ namespace CheckGMail
             }
         }
 
-        public Icon ApplicationIcon {
-            get
-            {
-                return _notifInit;
-            }
-        }
+        public Icon ApplicationIcon { get; private set; }
 
         public Icon NotificationInit
         {
             get
             {
-                return _notifInit;
+                return ApplicationIcon;
             }
         }
 
-        public Icon NotificationMessages
-        {
-            get
-            {
-                return _notifMessages;
-            }
-        }
+        public Icon NotificationMessages { get; private set; }
 
         public Icon NotificationNoMessage
         {
             get
             {
-                return _notifInit;
+                return ApplicationIcon;
             }
         }
 
-        public Icon NotificationError
-        {
-            get
-            {
-                return _notifError;
-            }
-        }
+        public Icon NotificationError { get; private set; }
 
         public Stream GetClientSecretsStream()
         {
@@ -77,7 +57,7 @@ namespace CheckGMail
         }
 
         #region IDisposable Support
-        private bool disposedValue = false; // Pour détecter les appels redondants
+        private bool disposedValue;
 
         protected virtual void Dispose(bool disposing)
         {
@@ -85,37 +65,34 @@ namespace CheckGMail
             {
                 if (disposing)
                 {
-                    if (_notifInit != null)
+                    if (ApplicationIcon != null)
                     {
-                        _notifInit.Dispose();
+                        ApplicationIcon.Dispose();
                     }
 
-                    if (_notifMessages != null)
+                    if (NotificationMessages != null)
                     {
-                        _notifMessages.Dispose();
+                        NotificationMessages.Dispose();
                     }
 
-                    if (_notifError != null)
+                    if (NotificationError != null)
                     {
-                        _notifError.Dispose();
+                        NotificationError.Dispose();
                     }
                 }
 
-                _notifInit = null;
-                _notifMessages = null;
-                _notifError = null;
+                ApplicationIcon = null;
+                NotificationMessages = null;
+                NotificationError = null;
 
                 disposedValue = true;
             }
         }
 
-        // Ce code est ajouté pour implémenter correctement le modèle supprimable.
         public void Dispose()
         {
-            // Ne modifiez pas ce code. Placez le code de nettoyage dans Dispose(bool disposing) ci-dessus.
-            Dispose(true);
-            // TODO: supprimer les marques de commentaire pour la ligne suivante si le finaliseur est remplacé ci-dessus.
-            // GC.SuppressFinalize(this);
+            Dispose(disposing: true);
+            GC.SuppressFinalize(this);
         }
         #endregion
     }
