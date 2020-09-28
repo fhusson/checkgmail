@@ -19,7 +19,7 @@ namespace CheckGMail
 
     class GoogleBusiness : IDisposable
     {
-        private ClientSecrets clientSecrets = null;
+        private readonly ClientSecrets clientSecrets;
 
         private GoogleBusiness()
         {
@@ -43,7 +43,7 @@ namespace CheckGMail
 
         public string RequestQ { get; set; }
         public Status Status { get; set; }
-        private UserCredential _credential = null;
+        private UserCredential _credential;
         private UserCredential Credential
         {
             get
@@ -55,12 +55,10 @@ namespace CheckGMail
 
         /// <summary>Retrieves the Client Configuration from the server path.</summary>
         /// <returns>Client secrets that can be used for API calls.</returns>
-        private ClientSecrets GetClientSecrets()
+        private static ClientSecrets GetClientSecrets()
         {
-            using (var stream = MyResources.Instance.GetClientSecretsStream())
-            {
-                return GoogleClientSecrets.Load(stream).Secrets;
-            }
+            using var stream = MyResources.Instance.GetClientSecretsStream();
+            return GoogleClientSecrets.Load(stream).Secrets;
         }
 
         private void InitCredential()
@@ -70,11 +68,11 @@ namespace CheckGMail
                 new[] { GmailService.Scope.GmailReadonly },
                 "user",
                 CancellationToken.None,
-                new FileDataStore("Baleinoid.CheckGMail.Credential")
+                new FileDataStore("1f433.CheckGMail.Credential")
             ).Result;
         }
 
-        private GmailService _gmail = null;
+        private GmailService _gmail;
         private GmailService GMail
         {
             get
@@ -125,8 +123,6 @@ namespace CheckGMail
             msgRequest.Q = RequestQ;
 
             var msgResponse = msgRequest.Execute();
-
-            var msgList = msgResponse.Messages;
 
             return msgResponse.ResultSizeEstimate;
         }

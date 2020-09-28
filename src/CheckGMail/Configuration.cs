@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Reflection;
 
 namespace CheckGMail
 {
@@ -65,6 +66,28 @@ namespace CheckGMail
         }
 
         private const string URL_INBOX = @"https://mail.google.com";
-        public string InboxUrl => URL_INBOX;
+        public static string InboxUrl => URL_INBOX;
+
+        public static string ProductName
+        {
+            get
+            {
+                object[] attributes = Assembly.GetExecutingAssembly().GetCustomAttributes(typeof(AssemblyProductAttribute), false);
+                if (attributes.Length == 0)
+                {
+                    return "";
+                }
+                return ((AssemblyProductAttribute)attributes[0]).Product;
+            }
+        }
+
+        public static string ProductVersion
+        {
+            get
+            {
+                var v = Assembly.GetExecutingAssembly().GetName().Version;
+                return string.Format(CultureInfo.CurrentCulture, "Version {0}.{1}.{2}", v.Major, v.Minor, v.Revision);
+            }
+        }
     }
 }

@@ -7,7 +7,7 @@ namespace CheckGMail
 {
     public class MyResources: IDisposable
     {
-        private readonly Assembly _assembly = null;
+        private readonly Assembly _assembly;
 
         private MyResources()
         {
@@ -29,7 +29,7 @@ namespace CheckGMail
             }
         }
 
-        public Icon ApplicationIcon { get; private set; } = null;
+        public Icon ApplicationIcon { get; private set; }
 
         public Icon NotificationInit
         {
@@ -39,7 +39,7 @@ namespace CheckGMail
             }
         }
 
-        public Icon NotificationMessages { get; private set; } = null;
+        public Icon NotificationMessages { get; private set; }
 
         public Icon NotificationNoMessage
         {
@@ -49,7 +49,7 @@ namespace CheckGMail
             }
         }
 
-        public Icon NotificationError { get; private set; } = null;
+        public Icon NotificationError { get; private set; }
 
         public Stream GetClientSecretsStream()
         {

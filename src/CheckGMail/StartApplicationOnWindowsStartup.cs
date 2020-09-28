@@ -11,18 +11,14 @@ namespace CheckGMail
 
         static public void Enable()
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true))
-            {
-                key.SetValue(Application.ProductName, Application.ExecutablePath);
-            }
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true);
+            key.SetValue(Application.ProductName, Application.ExecutablePath);
         }
 
         static public void Disable()
         {
-            using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true))
-            {
-                key.DeleteValue(Application.ProductName, false);
-            }
+            using RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true);
+            key.DeleteValue(Application.ProductName, false);
         }
 
         static public bool IsEnabled()

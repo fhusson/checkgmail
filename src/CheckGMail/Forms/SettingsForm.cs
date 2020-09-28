@@ -205,10 +205,8 @@ namespace CheckGMail
 
         private void aboutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            using (AboutForm a = new AboutForm())
-            {
-                a.ShowDialog();
-            }
+            using AboutForm a = new AboutForm();
+            a.ShowDialog();
         }
 
         private void revokeToolStripMenuItem_Click(object sender, EventArgs e)
@@ -217,11 +215,11 @@ namespace CheckGMail
             CleanExit();
         }
 
-        private void ViewInbox()
+        private static void ViewInbox()
         {
             ProcessStartInfo psi = new ProcessStartInfo
             {
-                FileName = config.InboxUrl,
+                FileName = Configuration.InboxUrl,
                 UseShellExecute = true
             };
             Process.Start(psi);

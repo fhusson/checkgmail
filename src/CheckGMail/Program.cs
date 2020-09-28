@@ -16,10 +16,8 @@ namespace CheckGMail
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            using (var settings = new SettingsForm(false))
-            {
-                Application.Run();
-            }
+            using var settings = new SettingsForm(false);
+            Application.Run();
         }
     }
 }
