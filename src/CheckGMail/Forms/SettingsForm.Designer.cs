@@ -64,9 +64,10 @@
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(12, 301);
+            this.buttonOk.Location = new System.Drawing.Point(14, 347);
+            this.buttonOk.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(295, 23);
+            this.buttonOk.Size = new System.Drawing.Size(344, 27);
             this.buttonOk.TabIndex = 0;
             this.buttonOk.Text = "&OK";
             this.buttonOk.UseVisualStyleBackColor = true;
@@ -149,9 +150,11 @@
             // 
             this.groupBox1.Controls.Add(this.rbFrench);
             this.groupBox1.Controls.Add(this.rbEnglish);
-            this.groupBox1.Location = new System.Drawing.Point(12, 94);
+            this.groupBox1.Location = new System.Drawing.Point(14, 108);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(295, 72);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox1.Size = new System.Drawing.Size(344, 83);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Language";
@@ -159,9 +162,10 @@
             // rbFrench
             // 
             this.rbFrench.AutoSize = true;
-            this.rbFrench.Location = new System.Drawing.Point(7, 44);
+            this.rbFrench.Location = new System.Drawing.Point(8, 51);
+            this.rbFrench.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbFrench.Name = "rbFrench";
-            this.rbFrench.Size = new System.Drawing.Size(65, 17);
+            this.rbFrench.Size = new System.Drawing.Size(68, 19);
             this.rbFrench.TabIndex = 1;
             this.rbFrench.TabStop = true;
             this.rbFrench.Text = "Français";
@@ -170,9 +174,10 @@
             // rbEnglish
             // 
             this.rbEnglish.AutoSize = true;
-            this.rbEnglish.Location = new System.Drawing.Point(7, 20);
+            this.rbEnglish.Location = new System.Drawing.Point(8, 23);
+            this.rbEnglish.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbEnglish.Name = "rbEnglish";
-            this.rbEnglish.Size = new System.Drawing.Size(59, 17);
+            this.rbEnglish.Size = new System.Drawing.Size(63, 19);
             this.rbEnglish.TabIndex = 0;
             this.rbEnglish.TabStop = true;
             this.rbEnglish.Text = "English";
@@ -185,9 +190,11 @@
             this.groupBox2.Controls.Add(this.rbCustomQ);
             this.groupBox2.Controls.Add(this.rbAll);
             this.groupBox2.Controls.Add(this.rbInbox);
-            this.groupBox2.Location = new System.Drawing.Point(12, 172);
+            this.groupBox2.Location = new System.Drawing.Point(14, 198);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(295, 123);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox2.Size = new System.Drawing.Size(344, 142);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Check unread message in :";
@@ -195,9 +202,10 @@
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(85, 68);
+            this.linkLabel1.Location = new System.Drawing.Point(99, 78);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(90, 13);
+            this.linkLabel1.Size = new System.Drawing.Size(109, 15);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "(more information)";
@@ -205,17 +213,19 @@
             // 
             // tbCustomQ
             // 
-            this.tbCustomQ.Location = new System.Drawing.Point(29, 91);
+            this.tbCustomQ.Location = new System.Drawing.Point(34, 105);
+            this.tbCustomQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.tbCustomQ.Name = "tbCustomQ";
-            this.tbCustomQ.Size = new System.Drawing.Size(260, 20);
+            this.tbCustomQ.Size = new System.Drawing.Size(303, 23);
             this.tbCustomQ.TabIndex = 3;
             // 
             // rbCustomQ
             // 
             this.rbCustomQ.AutoSize = true;
-            this.rbCustomQ.Location = new System.Drawing.Point(7, 68);
+            this.rbCustomQ.Location = new System.Drawing.Point(8, 78);
+            this.rbCustomQ.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbCustomQ.Name = "rbCustomQ";
-            this.rbCustomQ.Size = new System.Drawing.Size(71, 17);
+            this.rbCustomQ.Size = new System.Drawing.Size(79, 19);
             this.rbCustomQ.TabIndex = 2;
             this.rbCustomQ.TabStop = true;
             this.rbCustomQ.Text = "Custom Q";
@@ -224,9 +234,10 @@
             // rbAll
             // 
             this.rbAll.AutoSize = true;
-            this.rbAll.Location = new System.Drawing.Point(7, 44);
+            this.rbAll.Location = new System.Drawing.Point(8, 51);
+            this.rbAll.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbAll.Name = "rbAll";
-            this.rbAll.Size = new System.Drawing.Size(185, 17);
+            this.rbAll.Size = new System.Drawing.Size(202, 19);
             this.rbAll.TabIndex = 1;
             this.rbAll.TabStop = true;
             this.rbAll.Text = "All message except Spam && Trash";
@@ -235,9 +246,10 @@
             // rbInbox
             // 
             this.rbInbox.AutoSize = true;
-            this.rbInbox.Location = new System.Drawing.Point(7, 20);
+            this.rbInbox.Location = new System.Drawing.Point(8, 23);
+            this.rbInbox.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.rbInbox.Name = "rbInbox";
-            this.rbInbox.Size = new System.Drawing.Size(73, 17);
+            this.rbInbox.Size = new System.Drawing.Size(81, 19);
             this.rbInbox.TabIndex = 0;
             this.rbInbox.TabStop = true;
             this.rbInbox.Text = "Inbox only";
@@ -250,9 +262,10 @@
             // cbOnStart
             // 
             this.cbOnStart.AutoSize = true;
-            this.cbOnStart.Location = new System.Drawing.Point(9, 19);
+            this.cbOnStart.Location = new System.Drawing.Point(10, 22);
+            this.cbOnStart.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbOnStart.Name = "cbOnStart";
-            this.cbOnStart.Size = new System.Drawing.Size(225, 17);
+            this.cbOnStart.Size = new System.Drawing.Size(252, 19);
             this.cbOnStart.TabIndex = 6;
             this.cbOnStart.Text = "Start automatically when starting Windows";
             this.cbOnStart.UseVisualStyleBackColor = true;
@@ -263,9 +276,11 @@
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.numIntervalMinutes);
-            this.groupBox3.Location = new System.Drawing.Point(12, 12);
+            this.groupBox3.Location = new System.Drawing.Point(14, 14);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(295, 76);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.groupBox3.Size = new System.Drawing.Size(344, 88);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "General";
@@ -273,24 +288,27 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(138, 52);
+            this.label2.Location = new System.Drawing.Point(161, 60);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(50, 15);
             this.label2.TabIndex = 10;
             this.label2.Text = "minutes";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 52);
+            this.label1.Location = new System.Drawing.Point(7, 60);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 9;
             this.label1.Text = "Check every";
             // 
             // numIntervalMinutes
             // 
-            this.numIntervalMinutes.Location = new System.Drawing.Point(79, 48);
+            this.numIntervalMinutes.Location = new System.Drawing.Point(92, 55);
+            this.numIntervalMinutes.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.numIntervalMinutes.Maximum = new decimal(new int[] {
             9999,
             0,
@@ -302,7 +320,7 @@
             0,
             0});
             this.numIntervalMinutes.Name = "numIntervalMinutes";
-            this.numIntervalMinutes.Size = new System.Drawing.Size(53, 20);
+            this.numIntervalMinutes.Size = new System.Drawing.Size(62, 23);
             this.numIntervalMinutes.TabIndex = 8;
             this.numIntervalMinutes.Value = new decimal(new int[] {
             1,
@@ -312,14 +330,15 @@
             // 
             // SettingsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 331);
+            this.ClientSize = new System.Drawing.Size(369, 382);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.buttonOk);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.MaximizeBox = false;
             this.Name = "SettingsForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -11,7 +11,7 @@ namespace Baleinoid.Windows.Tools
         {
             using (RegistryKey key = Registry.CurrentUser.OpenSubKey(PATH, true))
             {
-                key.SetValue(Application.ProductName, Application.ExecutablePath.ToString());
+                key.SetValue(Application.ProductName, Application.ExecutablePath);
             }
         }
 
